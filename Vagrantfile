@@ -1,6 +1,6 @@
 # -*- mode: ruby -*-
 # vi: set ft=ruby :
-default_box = "generic/opensuse42"
+default_box = "roboxes/opensuse15"
 
 # All Vagrant configuration is done below. The "2" in Vagrant.configure
 # configures the configuration version (we support older styles for
@@ -15,6 +15,7 @@ Vagrant.configure("2") do |config|
   # boxes at https://vagrantcloud.com/search.
 
   config.vm.define "master" do |master|
+    config.vm.synced_folder "./", "/vagrant", type: "virtualbox", create: true
     master.vm.box = default_box
     master.vm.hostname = "master"
     master.vm.network 'private_network', ip: "192.168.0.200",  virtualbox__intnet: true
