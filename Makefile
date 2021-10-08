@@ -1,3 +1,5 @@
+manifests=
+
 start:
 	vagrant up
 
@@ -10,7 +12,7 @@ stop:
 ssh:
 	vagrant ssh
 
-deployment:
+deployment: $(wildcard deployment/*.yaml)
 	kubectl apply -f deployment/
 
 seed_db:
@@ -25,6 +27,7 @@ install:
 	pipenv install -r ./modules/api/requirements.txt
 
 check-dependencies:
+	@echo "This should be run inside a pipenv virtual env"
 	pipenv check
 
 clean:
