@@ -5,8 +5,8 @@ name: nd064-udaconnect-app  - Package with Docker
 ## or when a new commit is pushed to the repository
 on:
   push:
-    # branches:
-    #   - "main"
+    branches:
+      - "main"
     # tags:
     #   - 'v*'
 jobs:
