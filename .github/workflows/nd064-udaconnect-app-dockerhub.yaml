@@ -1,5 +1,5 @@
 #  Named of the workflow.
-name: udaconnect-app  - Package with Docker
+name: nd064-udaconnect-app  - Package with Docker
 ## Set the trigger policy.
 ## In this case, the workflow is execute on a `push` event,
 ## or when a new commit is pushed to the repository
@@ -47,7 +47,7 @@ jobs:
           file: ./modules/frontend/Dockerfile
           push: true
           platforms: linux/amd64
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}/udaconnect-app:latest
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/nd064-udaconnect-app:latest
           # By default we also get the "latest" tag
           # tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
